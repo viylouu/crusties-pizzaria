@@ -1,3 +1,3 @@
-﻿partial class crust { 
-    
+﻿partial class crust {
+    static List<vehicle> vehicles = new();
 }
