@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="assets\fonts\font.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="assets\spritestacks\vehicles\big green car.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

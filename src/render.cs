@@ -27,5 +27,7 @@
         );
 
         renderstack(c, new(Window.Width/-2,Window.Height/-2),0,Time.TotalTime);
+
+        rendertext(c, dfont, "@MCSteveReacts is steve", new(3,3), new Color(127, 127, 127));
     }
 }

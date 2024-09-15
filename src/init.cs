@@ -4,6 +4,9 @@
         Simulation.SetFixedResolution(640,360,Color.Black,false,false,true);
 
         loadvehicles();
+
+        dfonttex = Graphics.LoadTexture(@"assets\fonts\font.png");
+        dfont = genfont(dfonttex, " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz");
     }
 
     static void loadvehicles() {

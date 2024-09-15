@@ -1,13 +1,4 @@
-﻿public class spritestack {
-    public ITexture tex;
-    public int layers;
-    public Vector2 pos;
-    public float z;
-    public float rot;
-    public bool outlined;
-}
-
-partial class crust {
+﻿partial class crust {
     static List<spritestack> stacks = new();
 
     static void addstack(spritestack ss) => stacks.Add(ss);
@@ -32,7 +23,7 @@ partial class crust {
             }
         });
 
-        foreach (var ss in _sorted)
+        foreach (var ss in _sorted) {
             for (int i = 0; i < ss.layers; i++) {
                 //epic transformation
                 c.Translate(0,-i-ss.z);
@@ -48,6 +39,9 @@ partial class crust {
                 );
                 c.ResetState();
             }
+
+            c.Flush();
+        }
 
         stacks.Clear();
     }
