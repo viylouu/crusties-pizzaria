@@ -4,15 +4,9 @@
     static void addstack(spritestack ss) => stacks.Add(ss);
 
     static void renderstack(ICanvas c, Vector2 camera, float camz, float camrot) {
-        List<spritestack> _sorted = new();
-
-        Parallel.ForEach(stacks, ss => {
-            _sorted.Add(ss);
-        });
-
         //apply "depth sorting"
-        _sorted.Sort((a, b) => {
-            if (b.z.CompareTo(a.z) != 0)
+        stacks.Sort((a, b) => {
+            if(b.z.CompareTo(a.z) != 0)
                 return -b.z.CompareTo(a.z);
             else {
                 float cosRot = MathF.Cos(camrot);
@@ -23,7 +17,7 @@
             }
         });
 
-        foreach (var ss in _sorted) {
+        foreach (var ss in stacks) {
             for (int i = 0; i < ss.layers; i++) {
                 //epic transformation
                 c.Translate(0,-i-ss.z);
