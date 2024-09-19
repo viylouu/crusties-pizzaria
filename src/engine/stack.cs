@@ -20,7 +20,8 @@
         foreach (var ss in stacks) {
             for (int i = 0; i < ss.layers; i++) {
                 //epic transformation
-                c.Translate(0,-i-ss.z);
+                c.Translate(-Window.Width / 2, -Window.Height / 2);
+                c.Translate(0, -i - ss.z);
                 c.Translate(-camera.X, -camera.Y);
                 c.Rotate(-camrot);
                 c.Translate(ss.pos.X, ss.pos.Y);
@@ -28,8 +29,8 @@
 
                 c.DrawTexture(
                     ss.tex,
-                    new Rectangle(i*16,0,16,16),
-                    new Rectangle(0,0,16,16,Alignment.Center)
+                    new Rectangle(i * 16, 0, 16, 16),
+                    new Rectangle(0, 0, 16, 16, Alignment.Center)
                 );
                 c.ResetState();
             }
